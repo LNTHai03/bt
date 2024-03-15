@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order 001</title>
+</head>
+<body>
+    <h1>đơn hàng 001</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>MSP</th>
+                <th>Text</th>
+                <th>SL</th>
+            </tr>
+        </thead>
+        <tbody id="orderItems">
+
+        </tbody>
+        <button onclick="addRow()">+</button>
+        <button onclick="removeRow()">−</button>
+    </table>
+
+    <script>
+        
+        function addRow() {
+            const tableBody = document.getElementById('orderItems');
+            const newRow = document.createElement('tr');
+
+       
+            const mspCell = document.createElement('td');
+            const textCell = document.createElement('td');
+            const slCell = document.createElement('td');
+
+        
+            const mspInput = document.createElement('input');
+            mspInput.type = 'text';
+            mspInput.name = 'msp';
+            mspInput.value = 'sp' + (tableBody.rows.length + 1).toString().padStart(2 ,'0');
+
+            const textInput = document.createElement('input');
+            textInput.type = 'text';
+            textInput.name = 'tin';
+
+            const slInput = document.createElement('input');
+            slInput.type = 'number';
+            slInput.name = 'sl';
+            slInput.value = 1;  
+
+            mspCell.appendChild(mspInput);
+            textCell.appendChild(textInput);
+            slCell.appendChild(slInput);
+
+            newRow.appendChild(mspCell);
+            newRow.appendChild(textCell);
+            newRow.appendChild(slCell);
+
+        
+            tableBody.appendChild(newRow);
+        }
+
+        function removeRow() {
+            const tableBody = document.getElementById('orderItems');
+            if (tableBody.rows.length > 1) {
+                tableBody.removeChild(tableBody.lastChild);
+            }
+        }
+    </script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order 001</title>
+</head>
+<body>
+    <h1>đơn hàng 001</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>MSP</th>
+                <th>Text</th>
+                <th>SL</th>
+            </tr>
+        </thead>
+        <tbody id="orderItems">
+            <script>
+                for (let i = 0; i < 3; i++) {
+                    addRow();
+                }
+            </script>
+        </tbody>
+    </table>
+    <button onclick="addRow()">+</button>
+
+    <script>
+        function addRow() {
+            const tableBody = document.getElementById('orderItems');
+            const newRow = document.createElement('tr');
+
+            const mspCell = document.createElement('td');
+            const textCell = document.createElement('td');
+            const slCell = document.createElement('td');
+
+            const mspInput = document.createElement('input');
+            mspInput.type = 'text';
+            mspInput.name = 'msp';
+
+            const textInput = document.createElement('input');
+            textInput.type = 'text';
+            textInput.name = 'text';
+
+            const slInput = document.createElement('input');
+            slInput.type = 'number';
+            slInput.name = 'sl';
+            slInput.value = 1;
+
+            const textNode = document.createTextNode('');
+
+            mspCell.appendChild(mspInput);
+            textCell.appendChild(textInput);
+            slCell.appendChild(slInput);
+
+            newRow.appendChild(mspCell);
+            newRow.appendChild(textCell);
+            newRow.appendChild(slCell);
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Xóa';
+            removeButton.onclick = function() {
+                this.parentNode.parentNode.removeChild(this.parentNode);
+            };
+            newRow.appendChild(removeButton);
+
+            tableBody.appendChild(newRow);
+        }
+    </script>
+</body>
+</html> -->

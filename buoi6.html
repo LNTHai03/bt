@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Document</title>
+</head>
+<body>
+    <script type ="text/javascript"> 
+    document.body.style.background = '#303030'
+    </script>
+    <input type="text" name="eingabe" value="Hallo1" id="e1"/>
+    <input type="text" name="eingabe" value="Hallo2" id="e2"/>
+    <input type="text" name="eingabe" value="Hallo3" id="e3"/>
+    
+    <script type="text/javascript">
+    var inputs = document.getElementsByName("eingabe");
+    for(var i=0;i<inputs.length;i++) {
+      if(i === 0) {
+        inputs[i].value = "Toll! (e1)";
+        inputs[i].style.color = "red";
+      } else {
+        inputs[i].value = "Olla" + i;
+      }
+    }
+    
+    </script>
+<p id="p1">Hello World!</p>
+
+<script type="text/javascript">
+document.getElementById("p1").innerHTML = "New text!";
+document.getElementById("p1").innerHTML = "Updated text!";
+</script>
+
+</body>
+</html>
