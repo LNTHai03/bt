@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đếm ngược thời gian</title>
+    <style>
+        body {
+            text-align: center;
+            font-size: 24px;
+            font-family: sans-serif;
+        }
+        
+        #timer {
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="timer">
+        <span id="time-left">10</span>
+    </div>
+    
+    <script>
+        var timeLeft = 10;
+        var interval = setInterval(function() {
+            timeLeft--;
+            document.getElementById("time-left").textContent = timeLeft;
+            
+            if (timeLeft === 0) {
+                clearInterval(interval);
+                document.getElementById("time-left").textContent = "0 Hết giờ";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
